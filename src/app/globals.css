@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+body {
+  background: #0d0f0e;
+  color: #e8ede9;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #141716; }
+::-webkit-scrollbar-thumb { background: #252b28; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #6b7a6e; }
+
+.font-display { font-family: 'Bebas Neue', sans-serif; }
+.font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(200,240,96,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,240,96,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
