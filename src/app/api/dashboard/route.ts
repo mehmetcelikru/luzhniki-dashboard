@@ -6,8 +6,8 @@ export const revalidate = 900
 export async function GET() {
   try {
     const [camRows, panelRows, odemeRows, cizimRows] = await Promise.all([
-      fetchSheet(process.env.SHEET_CAM_ID!, 'CAM TAKIP TABLOSU!A3:DL400'),
-      fetchSheet(process.env.SHEET_PANEL_ID!, 'Sevkiyat Listesi!A2:F2000'),
+      fetchSheet(process.env.SHEET_CAM_ID!, 'Cam Tablosu!A3:DL400'),
+      fetchSheet(process.env.SHEET_PANEL_ID!, 'Gelen ve Kalan Modüller!A2:F2000'),
       fetchSheet(process.env.SHEET_ODEME_ID!, 'Odeme Listesi!A4:P300'),
       fetchSheet(process.env.SHEET_CIZIM_ID!, 'Çizim Takip!A4:Q300'),
     ])

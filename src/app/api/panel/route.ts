@@ -6,7 +6,7 @@ export const revalidate = 900
 export async function GET() {
   try {
     const sheetId = process.env.SHEET_PANEL_ID!
-    const rows = await fetchSheet(sheetId, 'Sevkiyat Listesi!A2:F2000')
+    const rows = await fetchSheet(sheetId, 'Gelen ve Kalan Modüller!A2:F2000')
 
     const moduller: any[] = []
     const blokOzet: Record<string, { duzGelen: number; koseGelen: number }> = {}
