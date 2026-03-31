@@ -5,8 +5,13 @@ export const revalidate = 900
 
 function parseRuble(val: string): number {
   if (!val) return 0
-  // Sheet format: 579.312,00 (dot=thousands separator, comma=decimal)
-  return parseFloat(val.toString().replace(/[₽\s]/g, '').replace(/\./g, '').replace(',', '.')) || 0
+  const s = val.toString().replace(/[₽\s]/g, '')
+  if (s.includes(',')) {
+    // Russian format: 579.312,00 (dot=thousands, comma=decimal)
+    return parseFloat(s.replace(/\./g, '').replace(',', '.')) || 0
+  }
+  // Plain/US format: 579312.00
+  return parseFloat(s) || 0
 }
 
 export async function GET() {
