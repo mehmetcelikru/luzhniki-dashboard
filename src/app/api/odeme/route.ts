@@ -5,7 +5,8 @@ export const revalidate = 900
 
 function parseRuble(val: string): number {
   if (!val) return 0
-  return parseFloat(val.toString().replace(/[₽\s,]/g, '').replace('.', '').replace(',', '.')) || 0
+  // Sheet format: 579.312,00 (dot=thousands separator, comma=decimal)
+  return parseFloat(val.toString().replace(/[₽\s]/g, '').replace(/\./g, '').replace(',', '.')) || 0
 }
 
 export async function GET() {
