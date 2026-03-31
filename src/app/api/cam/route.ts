@@ -7,7 +7,7 @@ export const revalidate = 900 // 15 dakika
 export async function GET() {
   try {
     const sheetId = process.env.SHEET_CAM_ID!
-    const rows = await fetchSheet(sheetId, 'Cam Tablosu!A3:DL400')
+    const rows = await fetchSheet(sheetId, 'Cam Tablosu!A3:DO400')
 
     const partiler: CamParti[] = []
 
@@ -18,7 +18,7 @@ export async function GET() {
       const gelenMetraj = parseFloat((row[116] || '0').toString().replace(',', '.')) || 0
       const kalanMetraj = parseFloat((row[117] || '0').toString().replace(',', '.')) || 0
       const siparisMetraj = gelenMetraj + kalanMetraj
-      const gelenYuzde = siparisMetraj > 0 ? Math.round((gelenMetraj / siparisMetraj) * 100) : 0
+      const gelenYuzde = parseInt((row[118] || '0').toString()) || 0
 
       partiler.push({
         no: Number(row[0]),
