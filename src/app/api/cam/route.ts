@@ -15,8 +15,8 @@ export async function GET() {
       if (!row[0] || isNaN(Number(row[0]))) continue
 
       const durum = (row[3] || '').toString().trim()
-      const gelenMetraj = parseFloat((row[22] || '0').toString().replace(',', '.')) || 0
-      const kalanMetraj = parseFloat((row[24] || '0').toString().replace(',', '.')) || 0
+      const gelenMetraj = parseFloat((row[116] || '0').toString().replace(',', '.')) || 0
+      const kalanMetraj = parseFloat((row[117] || '0').toString().replace(',', '.')) || 0
       const siparisMetraj = gelenMetraj + kalanMetraj
       const gelenYuzde = siparisMetraj > 0 ? Math.round((gelenMetraj / siparisMetraj) * 100) : 0
 
