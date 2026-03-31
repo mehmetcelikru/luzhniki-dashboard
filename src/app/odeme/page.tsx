@@ -5,7 +5,7 @@ import { Search } from 'lucide-react'
 
 function formatRuble(n: number) {
   if (!n) return '—'
-  return n.toLocaleString('ru-RU', { maximumFractionDigits: 0 }) + ' ₽'
+  return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' ₽'
 }
 
 export default function OdemePage() {
