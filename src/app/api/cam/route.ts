@@ -7,7 +7,7 @@ export const revalidate = 900 // 15 dakika
 export async function GET() {
   try {
     const sheetId = process.env.SHEET_CAM_ID!
-    const rows = await fetchSheet(sheetId, 'Cam Tablosu!A3:DO400')
+    const rows = await fetchSheet(sheetId, 'Cam Tablosu!A3:DO1600')
 
     const partiler: CamParti[] = []
 
